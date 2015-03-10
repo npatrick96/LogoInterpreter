@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="border" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControllerWithArrowKeys">
+   <left>
+		<Pane fx:id="canvas" onMousePressed="#grabKeys" prefHeight="500.0" prefWidth="477.0" BorderPane.alignment="CENTER">
+			<children>
+            <Circle fx:id="turtleHead" centerX="240.0" centerY="245.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="turtleTopHead" centerX="240.0" centerY="235.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+			</children>
+		</Pane>
+   </left>
+   <right>
+      <VBox fx:id="rightVBox" prefHeight="500.0" prefWidth="230.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="37.0" prefWidth="223.0" text="Command Line Logo Interpreter" underline="true, ">
+               <effect>
+                  <Blend />
+               </effect></Label>
+            <TextArea fx:id="userCodeTextArea" prefHeight="226.0" prefWidth="223.0" promptText="#Type instructions here!                        #You will notice that everything works well in this version except Logo procedures(not currently supported).                                      #Thank you for your patience." />
+            <Button fx:id="runTypedCodeButton" mnemonicParsing="false" onAction="#runTypedCode" prefHeight="46.0" prefWidth="223.0" text="EXECUTE CODE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <HBox prefHeight="44.0" prefWidth="184.0">
+               <children>
+                  <Button fx:id="moveForwardButton" mnemonicParsing="false" onAction="#moveForward" prefHeight="42.0" prefWidth="110.0" text="Move Forward" />
+                  <Button fx:id="moveBackwardButton" mnemonicParsing="false" onAction="#moveBackward" prefHeight="42.0" prefWidth="114.0" text="Move Backward" />
+               </children>
+            </HBox>
+            <HBox prefHeight="40.0" prefWidth="184.0">
+               <children>
+                  <Button fx:id="turnRightButton" mnemonicParsing="false" onAction="#turnRight" prefHeight="42.0" prefWidth="110.0" text="Turn Right" />
+                  <Button fx:id="turnLeftButton" mnemonicParsing="false" onAction="#turnLeft" prefHeight="42.0" prefWidth="114.0" text="Turn Left" />
+               </children>
+            </HBox>
+            <HBox prefHeight="38.0" prefWidth="184.0">
+               <children>
+                  <Button fx:id="showTurtleButton" mnemonicParsing="false" onAction="#showTurtle" prefHeight="42.0" prefWidth="110.0" text="Show Turtle" />
+                  <Button fx:id="hideTurtleButton" mnemonicParsing="false" onAction="#hideTurtle" prefHeight="42.0" prefWidth="114.0" text="Hide Turtle" />
+               </children>
+            </HBox>
+            <HBox prefHeight="40.0" prefWidth="223.0">
+               <children>
+                  <Button fx:id="penUPButton" mnemonicParsing="false" onAction="#penUp" prefHeight="42.0" prefWidth="110.0" text="Pen Up" />
+                  <Button fx:id="PenDownButton" mnemonicParsing="false" onAction="#penDown" prefHeight="42.0" prefWidth="114.0" text="Pen Down" />
+               </children>
+            </HBox>
+            <HBox prefHeight="40.0" prefWidth="223.0">
+               <children>
+                  <Button fx:id="clearScreenButton" mnemonicParsing="false" onAction="#clearScreen" prefHeight="42.0" prefWidth="110.0" text="Clear Screen" />
+                  <Button fx:id="moveHomeButton" mnemonicParsing="false" onAction="#moveHome" prefHeight="40.0" prefWidth="114.0" text="Move to Home" />
+               </children>
+            </HBox>
+            <HBox prefHeight="40.0" prefWidth="223.0">
+               <children>
+                  <Button fx:id="stopTheProgramButton" mnemonicParsing="false" onAction="#stopProgram" prefHeight="42.0" prefWidth="223.0" text="STOP PROGRAM" />
+               </children>
+            </HBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+   </right>
+</BorderPane>
